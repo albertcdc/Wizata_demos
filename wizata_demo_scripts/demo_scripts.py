@@ -36,6 +36,3 @@ def LR_model_evaluation(context: wizata_dsapi.Context):
         lambda x: round(x, 4 - int(floor(log10(abs(x)))) - 1 if (x != 0) & (~np.isnan(x)) else x))
 
     return df_pred_target, df_metrics
-
-
-wizata_dsapi.api().upsert(LR_model_evaluation)
